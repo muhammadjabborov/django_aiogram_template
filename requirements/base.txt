@@ -1,0 +1,13 @@
+django
+psycopg2-binary
+python-environ
+django-cors-headers
+django-jazzmin
+drf-yasg
+djangorestframework
+django-filter
+aiogram==2.25.1
+celery
+django_redis
+requests
+pillow

@@ -14,7 +14,7 @@ from pathlib import Path
 
 import environ
 
-#from core.jazzmin_conf import *  # noqa
+from core.jazzmin_conf import *  # noqa
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
@@ -182,5 +182,3 @@ CELERY_TASK_TRACK_STARTED = True
 CELERY_TASK_TIME_LIMIT = 30 * 60
 
 BOT_TOKEN = env.str("BOT_TOKEN")
-CHANNEL_ID = env.str("CHANNEL_ID", default="")
-BOT_USERNAME = env.str("BOT_USERNAME", default="")

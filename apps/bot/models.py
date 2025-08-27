@@ -27,12 +27,3 @@ class UserContact(BaseModel):
         verbose_name = _("User Contact")
         verbose_name_plural = _("User Contacts")
 
-
-class UTMSourceType(BaseModel):
-    source = models.CharField(_("source"), max_length=255)
-    source_type = models.CharField(_("source type"), max_length=255)
-
-    class Meta:
-        verbose_name = _("UTM Source Type")
-        verbose_name_plural = _("UTM Source Types")
-

@@ -16,14 +16,4 @@ class User(BaseModel):
         verbose_name_plural = _("Users")
 
 
-class UserContact(BaseModel):
-    user = models.ForeignKey("bot.User", verbose_name=_("user"), on_delete=models.CASCADE, related_name="user_contacts")
-    phone_number = models.CharField(_("phone number"), max_length=32)
-
-    def __str__(self):
-        return f"{self.user_id}:{self.phone_number}"
-
-    class Meta:
-        verbose_name = _("User Contact")
-        verbose_name_plural = _("User Contacts")
 

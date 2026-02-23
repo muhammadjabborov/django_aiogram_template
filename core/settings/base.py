@@ -14,8 +14,6 @@ from pathlib import Path
 
 import environ
 
-from core.jazzmin_conf import *  # noqa
-
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
@@ -44,6 +42,7 @@ DJANGO_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "tinymce"
 ]
 
 CUSTOM_APPS = [
@@ -182,3 +181,40 @@ CELERY_TASK_TRACK_STARTED = True
 CELERY_TASK_TIME_LIMIT = 30 * 60
 
 BOT_TOKEN = env.str("BOT_TOKEN")
+
+TINYMCE_DEFAULT_CONFIG = {
+    "height": 360,
+    "width": "auto",
+    "cleanup_on_startup": True,
+    "custom_undo_redo_levels": 20,
+    "theme": "silver",
+    "plugins": """
+        textcolor save link image media preview codesample contextmenu
+        table code lists fullscreen insertdatetime nonbreaking
+        contextmenu directionality searchreplace wordcount visualblocks
+        visualchars code fullscreen autolink lists charmap print hr
+        anchor pagebreak
+        """,
+    "toolbar1": """
+        fullscreen preview bold italic underline | fontselect,
+        fontsizeselect | forecolor backcolor | alignleft alignright |
+        aligncenter alignjustify | indent outdent | bullist numlist table |
+        | link image media | codesample |
+        """,
+    "toolbar2": """
+        visualblocks visualchars |
+        charmap hr pagebreak nonbreaking anchor | code |
+        """,
+    "contextmenu": "formats | link image",
+    "menubar": True,
+    "statusbar": True,
+    "content_style": "body { font-family: 'Times New Roman', Times, serif; font-size: 14px; }",
+    "font_family_formats": """
+        Arial=arial,helvetica,sans-serif;
+        Courier New=courier new,courier,monospace;
+        Georgia=georgia,palatino,serif;
+        Helvetica=helvetica,arial,sans-serif;
+        Times New Roman=times new roman,times,serif;
+        Verdana=verdana,geneva,sans-serif;
+    """,
+}
